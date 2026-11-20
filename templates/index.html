@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SolarSathi | Energy Management</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="brand">☀ SolarSathi</div>
+
+    <p class="menu-label">MAIN MENU</p>
+
+    <a class="active">▦ Dashboard</a>
+    <a>⚡ Energy Monitoring</a>
+    <a>🔋 Battery Management</a>
+    <a>🔌 Generator Status</a>
+    <a>📊 Energy Analytics</a>
+
+    <div class="sidebar-bottom">
+        <p>COASTAL ODISHA</p>
+        <small>Community Energy Resilience</small>
+    </div>
+</div>
+
+<main>
+
+    <header>
+        <div>
+            <h1>Energy Dashboard</h1>
+            <p>Community Cyclone Shelter · Odisha</p>
+        </div>
+
+        <div class="header-right">
+            <span id="connection">● SYSTEM ONLINE</span>
+            <span id="clock">--:--:--</span>
+        </div>
+    </header>
+
+    <section class="emergency-banner">
+        <div>
+            <strong>⚠ GRID OUTAGE SIMULATION</strong>
+            <p id="grid-status">
+                Shelter operating on independent energy sources.
+            </p>
+        </div>
+
+        <button onclick="toggleEmergency()"
+                id="emergency-button">
+            Restore Grid
+        </button>
+    </section>
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <span>☀ Solar Generation</span>
+            <h2 id="solar">-- kW</h2>
+            <small>Renewable energy input</small>
+        </div>
+
+        <div class="stat-card">
+            <span>🔋 Battery Charge</span>
+            <h2 id="battery">--%</h2>
+            <div class="progress">
+                <div id="battery-bar"></div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <span>⚡ Power Consumption</span>
+            <h2 id="load">-- kW</h2>
+            <small>Current shelter demand</small>
+        </div>
+
+        <div class="stat-card">
+            <span>⛽ Generator Fuel</span>
+            <h2 id="fuel">--%</h2>
+            <small id="generator-status">Standby</small>
+        </div>
+
+    </section>
+
+    <section class="main-grid">
+
+        <div class="panel">
+            <h3>Energy Generation & Consumption</h3>
+            <p class="muted">Simulated system readings</p>
+            <canvas id="energyChart"></canvas>
+        </div>
+
+        <div class="panel backup-panel">
+            <h3>Emergency Backup Estimate</h3>
+
+            <div class="backup-number">
+                <h1 id="backup">--</h1>
+                <span>hours</span>
+            </div>
+
+            <p class="muted">
+                Estimated autonomy at critical load
+            </p>
+
+            <hr>
+
+            <div class="info-row">
+                <span>Critical load demand</span>
+                <strong id="critical">5 kW</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Grid connection</span>
+                <strong id="grid-label">Disconnected</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Generator</span>
+                <strong id="generator-label">Standby</strong>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="main-grid">
+
+        <div class="panel">
+            <h3>Critical Infrastructure</h3>
+
+            <div class="load-item">
+                <span>🏥 Medical Equipment</span>
+                <strong>2.0 kW</strong>
+            </div>
+
+            <div class="load-item">
+                <span>💡 Emergency Lighting</span>
+                <strong>1.0 kW</strong>
+            </div>
+
+            <div class="load-item">
+                <span>📡 Communication</span>
+                <strong>0.5 kW</strong>
+            </div>
+
+            <div class="load-item">
+                <span>💧 Water Purification</span>
+                <strong>1.5 kW</strong>
+            </div>
+
+            <p class="muted">
+                Essential loads are prioritised during emergencies.
+            </p>
+        </div>
+
+        <div class="panel">
+            <h3>SolarSathi Intelligence</h3>
+            <p class="muted">Automated energy recommendations</p>
+
+            <div id="recommendations">
+                Loading recommendations...
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        SolarSathi · Disaster-Resilient Hybrid Energy Management
+        <span id="updated">Waiting for data...</span>
+    </footer>
+
+</main>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
